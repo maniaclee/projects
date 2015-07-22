@@ -1,0 +1,5 @@
+db:
+  url: jdbc:hsqldb:file:testdb
+  #多个词可以用dash
+  user-name: sa
+  password:
