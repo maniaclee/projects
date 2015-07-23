@@ -1,2 +1,2 @@
 # projects
-demo of projects
+demo of projects : Java & Scala
