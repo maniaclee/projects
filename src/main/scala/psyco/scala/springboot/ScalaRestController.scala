@@ -1,4 +1,4 @@
-package psyco.springboot
+package psyco.scala.springboot
 
 import com.google.common.collect.Lists
 import org.springframework.web.bind.annotation.{RequestMapping, RestController}

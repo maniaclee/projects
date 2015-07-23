@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @EnableAutoConfiguration
 @EnableConfigurationProperties
-@ComponentScan(basePackages = {"psyco.springboot"})
+@ComponentScan(basePackages = {"psyco.springboot","psyco.scala.springboot"})
 public class Application {
 
     public static void main(String[] args) throws Exception {
