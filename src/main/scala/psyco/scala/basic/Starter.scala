@@ -1,4 +1,4 @@
-package scala.basic
+package psyco.scala.basic
 
 /**
  * Created by lipeng on 15/7/24.
