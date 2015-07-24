@@ -54,9 +54,9 @@
         </dependency>
         <!--use jetty instead of tomcat-->
         <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-jetty</artifactId>-->
-            <!--<version>${spring.boot.version}</version>-->
+        <!--<groupId>org.springframework.boot</groupId>-->
+        <!--<artifactId>spring-boot-starter-jetty</artifactId>-->
+        <!--<version>${spring.boot.version}</version>-->
         <!--</dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -74,7 +74,12 @@
             <artifactId>woodstox-core-asl</artifactId>
             <version>4.4.1</version>
         </dependency>
-
+        <!--motif-->
+        <dependency>
+            <groupId>com.leacox.motif</groupId>
+            <artifactId>motif</artifactId>
+            <version>0.1</version>
+        </dependency>
         <!--scala-->
         <dependency>
             <groupId>org.scala-lang</groupId>
@@ -92,6 +97,13 @@
             <artifactId>akka-actor_2.11</artifactId>
             <version>2.4-M2</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.fusesource.scalate</groupId>
+            <artifactId>scalate-core</artifactId>
+            <version>1.5.3-scala_2.8.2</version>
+        </dependency>
+
 
     </dependencies>
 
