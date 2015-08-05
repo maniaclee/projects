@@ -8,17 +8,18 @@ import akka.actor.{Actor, Props}
  */
 
 
-class Data {
+class DataStream
+{
   var data: Int = 0
 
   val isDone: Boolean = false
 }
 
-case class DataTrue() extends Data {
+case class DataTrue() extends DataStream {
   override val isDone: Boolean = true
 }
 
-case class DataFalse() extends Data {
+case class DataFalse() extends DataStream {
 }
 
 class Calucator extends Actor {
