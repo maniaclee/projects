@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -12,7 +13,7 @@ import java.util.stream.IntStream;
 /**
  * Created by lipeng on 15/8/5.
  */
-public class SDsdfsdfsdfdsf {
+public class Lambda {
 
     static final List<String> symbols = Arrays.asList(
             "AMD", "HPQ", "IBM", "TXN", "VMW", "XRX", "AAPL", "ADBE",
@@ -47,5 +48,16 @@ public class SDsdfsdfsdfdsf {
     public void patition() {
         Map<Boolean, List<String>> map = symbols.stream().collect(Collectors.partitioningBy(s -> s.startsWith("A")));
         System.out.println(map);
+    }
+
+    @Test
+    public void intSummaryStatistics() {
+        List<Integer> primes = Arrays.asList(2, 3, 5, 7, 11, 13, 17, 19, 23, 29);
+        IntSummaryStatistics stats = primes.stream().mapToInt((x) -> x)
+                .summaryStatistics();
+        System.out.println("Highest prime number in List : " + stats.getMax());
+        System.out.println("Lowest prime number in List : " + stats.getMin());
+        System.out.println("Sum of all prime numbers : " + stats.getSum());
+        System.out.println("Average of all prime numbers : " + stats.getAverage());
     }
 }
