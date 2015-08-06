@@ -50,6 +50,7 @@ public class Lambda {
         System.out.println(map);
     }
 
+
     @Test
     public void intSummaryStatistics() {
         List<Integer> primes = Arrays.asList(2, 3, 5, 7, 11, 13, 17, 19, 23, 29);
@@ -59,5 +60,10 @@ public class Lambda {
         System.out.println("Lowest prime number in List : " + stats.getMin());
         System.out.println("Sum of all prime numbers : " + stats.getSum());
         System.out.println("Average of all prime numbers : " + stats.getAverage());
+    }
+    @Test
+    public void nullInList() {
+        System.out.println(symbols.stream().map(e -> e.startsWith("A") ? null : e).collect(Collectors.toList()));
+        System.out.println(symbols.stream().map(e -> e.startsWith("A") ? null : e).filter(e -> e != null).collect(Collectors.toList()));
     }
 }
