@@ -19,7 +19,7 @@ import psyco.springboot.Application;
  * Created by lipeng on 15/7/22.
  */
 //@RunWith(SpringJUnit4ClassRunner.class)
-//@ContextConfiguration(classes = {TestContext.class,Application.class})
+//@ContextConfiguration(classes = {TestContext.class,ApplicationBoot.class})
 //@WebAppConfiguration
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = {Application.class})
