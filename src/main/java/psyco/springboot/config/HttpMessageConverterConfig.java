@@ -17,7 +17,7 @@
 //    @BeanX
 //    public HttpMessageConverter marshallingHttpMessageConverter() {
 //        Jaxb2Marshaller jaxb2Marshaller = new Jaxb2Marshaller();
-//        jaxb2Marshaller.setPackagesToScan(Message.class.getPackage().getName());
+//        jaxb2Marshaller.setPackagesToScan(Message.class.getPackage().get_name());
 //        return new MarshallingHttpMessageConverter(jaxb2Marshaller);
 //    }
 //

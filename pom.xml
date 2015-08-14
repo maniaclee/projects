@@ -10,6 +10,7 @@
         <spring.boot.version>1.2.5.RELEASE</spring.boot.version>
         <!--<scala.version>2.11.7</scala.version>-->
         <scala.version>2.11.4</scala.version>
+        <spring-version>4.1.5.RELEASE</spring-version>
     </properties>
 
     <dependencies>
@@ -55,6 +56,11 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+            <version>${spring.boot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
             <version>${spring.boot.version}</version>
         </dependency>
@@ -66,9 +72,9 @@
 
 
         <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-undertow</artifactId>-->
-            <!--<version>${spring.boot.version}</version>-->
+        <!--<groupId>org.springframework.boot</groupId>-->
+        <!--<artifactId>spring-boot-starter-undertow</artifactId>-->
+        <!--<version>${spring.boot.version}</version>-->
         <!--</dependency>-->
         <!--use jetty instead of tomcat-->
         <!--<dependency>-->
@@ -189,6 +195,27 @@
         </dependency>
 
 
+        <!--mybatis & druid-->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>3.2.8</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+            <version>1.2.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.0.5</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.32</version>
+        </dependency>
 
 
     </dependencies>
@@ -250,7 +277,7 @@
                 <artifactId>maven-source-plugin</artifactId>
                 <executions>
                     <execution>
-                        <id>attach-sources</id>
+                        <_id>attach-sources</_id>
                         <goals>
                             <goal>jar</goal>
                         </goals>
@@ -263,7 +290,7 @@
                 <version>3.1.6</version>
                 <executions>
                     <execution>
-                        <id>scala-compile-first</id>
+                        <_id>scala-compile-first</_id>
                         <phase>process-resources</phase>
                         <goals>
                             <goal>add-source</goal>
@@ -271,7 +298,7 @@
                         </goals>
                     </execution>
                     <execution>
-                        <id>scala-test-compile</id>
+                        <_id>scala-test-compile</_id>
                         <phase>process-test-resources</phase>
                         <goals>
                             <goal>testCompile</goal>
