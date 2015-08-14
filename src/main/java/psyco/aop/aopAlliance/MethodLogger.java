@@ -20,7 +20,6 @@ public @interface MethodLogger {
 	 */
 	boolean isCatchException() default false;
 	
-	boolean isHttpApi() default false;
 	/**
 	 * 打印入参
 	 */

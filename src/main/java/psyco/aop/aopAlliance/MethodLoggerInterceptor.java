@@ -25,7 +25,6 @@ public class MethodLoggerInterceptor implements MethodInterceptor {
         boolean isCatchException = false;
         boolean isPrintArguments = true;
         boolean isPrintResult = true;
-        boolean isHttpApi = false;
 
         Method method = invocation.getMethod();
         System.out.println(method.getName());
@@ -34,7 +33,6 @@ public class MethodLoggerInterceptor implements MethodInterceptor {
             isCatchException = methodLogger.isCatchException();
             isPrintArguments = methodLogger.isPrintArguments();
             isPrintResult = methodLogger.isPrintResult();
-            isHttpApi = methodLogger.isHttpApi();
         }
 
         long start = System.currentTimeMillis();
@@ -105,7 +103,6 @@ public class MethodLoggerInterceptor implements MethodInterceptor {
 
     /**
      * 将入参信息装填到返回StringBuffer中
-     *
      */
     private String getArgumentLogInfo(Class<?>[] parameterTypes, Object[] args) {
         StringBuffer sb = new StringBuffer("");

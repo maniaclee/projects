@@ -55,12 +55,14 @@ public class EasyFlowDemo {
                                 )
                         )
                 );
-        flow = flow.executor(new SyncExecutor());
-        flow.whenEnter(States.SHOWING_WELCOME, statefulContext -> {
-            System.out.println("welcome");
-            statefulContext.trigger(Events.cardPresent);
-            throw new RuntimeException("sdfsdfsdfsdf");
-        }).whenEnter(States.WAITING_FOR_PIN, statefulContext1 -> System.out.println("waiting"));
+        flow.executor(new SyncExecutor())
+                .whenEnter(States.SHOWING_WELCOME, statefulContext -> {
+                    System.out.println("welcome");
+                    statefulContext.trigger(Events.cardPresent);
+                    throw new RuntimeException("sdfsdfsdfsdf");
+                })
+                .whenEnter(States.WAITING_FOR_PIN, statefulContext1 ->
+                        System.out.println("waiting"));
         StatefulContext ctx = new StatefulContext();
         flow.start(true, ctx);
         System.out.println(ctx.getState());
@@ -68,7 +70,7 @@ public class EasyFlowDemo {
     }
 
     @Test
-    public void sdfsdf(){
+    public void sdfsdf() {
         System.out.println(Lists.newArrayList().stream().getClass().getName());
     }
 }
