@@ -1,4 +1,4 @@
-package psyco.mybatis.dal;
+package psyco.mybatis;
 
 import com.alibaba.druid.filter.stat.StatFilter;
 import com.alibaba.druid.pool.DruidDataSource;
