@@ -16,8 +16,9 @@ import java.util.Date;
 /**
  * Created by lipeng on 15/9/8.
  */
-public class Mina {
+public class MinaServer {
 
+    public static final int PORT = 8123;
     public static void main(String[] args) throws Throwable {
         IoAcceptor acceptor = new NioSocketAcceptor();
 
@@ -28,7 +29,7 @@ public class Mina {
 
         acceptor.getSessionConfig().setReadBufferSize(2048);
         acceptor.getSessionConfig().setIdleTime(IdleStatus.BOTH_IDLE, 10);
-        acceptor.bind(new InetSocketAddress(8123));
+        acceptor.bind(new InetSocketAddress(PORT));
 
         /** Test => shell:  nc localhost 8123  */
     }
