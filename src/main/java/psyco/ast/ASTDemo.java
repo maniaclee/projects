@@ -1,10 +1,8 @@
 package psyco.ast;
 
+import com.google.common.collect.Lists;
 import org.apache.commons.io.IOUtils;
-import org.eclipse.jdt.core.dom.AST;
-import org.eclipse.jdt.core.dom.ASTParser;
-import org.eclipse.jdt.core.dom.CompilationUnit;
-import org.eclipse.jdt.core.dom.ImportDeclaration;
+import org.eclipse.jdt.core.dom.*;
 import org.junit.Test;
 
 import java.io.File;
@@ -19,7 +17,6 @@ public class ASTDemo {
     CompilationUnit unit;
     List<ImportDeclaration> imports;
 
-    @Test
     public ASTDemo parse(File file) throws Exception {
         String content = IOUtils.toString(new FileReader(file));
         ASTParser parser = ASTParser.newParser(AST.JLS3); //initialize
@@ -31,7 +28,33 @@ public class ASTDemo {
         return this;
     }
 
-    public void imports() {
+    public List<TypeDeclaration> classes() {
+        return unit.types();
+    }
+
+    public TypeDeclaration findClass() {
+        return classes().isEmpty() ? null : classes().get(0);
+    }
+
+    public FieldDeclaration[] fields(TypeDeclaration clz) {
+        return clz.getFields();
+    }
+
+    public static String getFieldName(FieldDeclaration fieldDeclaration) {
+        return ((VariableDeclarationFragment) fieldDeclaration.fragments().get(0)).getName().getFullyQualifiedName();
+    }
+
+
+    @Test
+    public void test() throws Exception {
+        ASTDemo re = parse(f);
+//        System.out.println(re.unit);
+//        System.out.println(re.findClass().getFields()[0].getClass());
+        Lists.newArrayList(re.findClass().getFields()).forEach(e -> {
+            System.out.println(e.getType().getClass());
+            System.out.println(getFieldName(e));
+            System.out.println("----------------");
+        });
     }
 
 }
