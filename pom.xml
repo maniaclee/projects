@@ -7,9 +7,6 @@
     <artifactId>psyco.projects</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>project-biz</module>
-    </modules>
     <properties>
         <spring.boot.version>1.2.5.RELEASE</spring.boot.version>
         <!--<scala.version>2.11.7</scala.version>-->

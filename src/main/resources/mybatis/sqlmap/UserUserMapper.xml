@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="psyco.multiDataSource.test.mapper.UserUserMapper">
+    <resultMap id="emailMapper" type="psyco.multiDataSource.test.entity.UserUser">
+
+        <result column="id" property="_id"/>
+
+        <result column="name" property="_name"/>
+
+        <result column="email" property="_email"/>
+
+    </resultMap>
+
+    <sql id="selectAllColumns">
+    id,name,email
+    </sql>
+
+    <sql id="setAllColumns">
+        <set>
+            <if test="id != null">id = #{_id},</if>
+            <if test="name != null">name = #{_name},</if>
+            <if test="email != null">email = #{_email},</if>
+
+        </set>
+    </sql>
+
+    <select id="findOne" resultMap="emailMapper">
+        select
+        <include refid="selectAllColumns"/>
+        from User where id = #{id}
+    </select>
+    <select id="findAll" resultMap="emailMapper">
+        SELECT
+        <include refid="selectAllColumns"/>
+        FROM User  ORDER BY email DESC
+    </select>
+
+</mapper>

@@ -34,7 +34,7 @@ public class Age implements Comparable<Age>, Serializable {
 
     @Override
     public String toString() {
-        return "Age [_id=" + _id + ", _name=" + _name + ", _age=" + _age + "]";
+        return "User [_id=" + _id + ", _name=" + _name + ", _age=" + _age + "]";
     }
 
     @Override
