@@ -23,7 +23,8 @@ public class GuavaFunction {
     @Test
     public void collection() {
         List<Integer> a = Lists.newArrayList(1, 3, 5, 2, 455, 333);
-        System.out.println(Collections2.filter(a, input -> input > 3));
+        a=Lists.newArrayList(Collections2.filter(a, input -> input > 3));
+        System.out.println(a);
         System.out.println(Collections2.transform(a, input -> input.toString().length()));
     }
 
