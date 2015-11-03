@@ -10,10 +10,8 @@ import java.util.List;
  */
 @DataSource("user")
 public interface UserUserMapper {
-    @DataSource("user")
     UserUser findOne(int id);
 
-    @DataSource("user")
     List<UserUser> findAll();
 
 }

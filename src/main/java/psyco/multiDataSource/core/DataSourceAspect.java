@@ -22,10 +22,13 @@ public class DataSourceAspect {
         Class<?>[] parameterTypes = ((MethodSignature) point.getSignature())
                 .getMethod().getParameterTypes();
         try {
+            if (classz[0].isAnnotationPresent(DataSource.class)) {
+                DynamicDataSourceHolder.putDataSource(classz[0].getAnnotation(DataSource.class).value());
+                return;
+            }
             Method m = classz[0].getMethod(method, parameterTypes);
             if (m != null && m.isAnnotationPresent(DataSource.class)) {
-                DataSource data = m
-                        .getAnnotation(DataSource.class);
+                DataSource data = m.getAnnotation(DataSource.class);
                 DynamicDataSourceHolder.putDataSource(data.value());
             }
 
