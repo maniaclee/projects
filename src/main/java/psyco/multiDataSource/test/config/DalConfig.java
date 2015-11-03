@@ -45,8 +45,8 @@ public class DalConfig {
         DynamicDataSource re = new DynamicDataSource();
         Map<Object, Object> map = Maps.newHashMap();
         map.put("project-pro", ds1());
-        map.put("pro", ds1());
-        map.put("user", ds2());
+        map.put(Consts.pro, ds1());
+        map.put(Consts.user, ds2());
         re.setTargetDataSources(map);
         return re;
     }
